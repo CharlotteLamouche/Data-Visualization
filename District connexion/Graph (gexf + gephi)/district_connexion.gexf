@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf version="1.1" xmlns="http://www.gexf.net/1.1draft" xmlns:viz="http://www.gexf.net/1.1draft/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/XMLSchema-instance">
+  <graph defaultedgetype="undirected" mode="static">
+    <nodes>
+      <node id="Putuo" label="Putuo" />
+      <node id="Huangpu" label="Huangpu" />
+      <node id="Fengxian" label="Fengxian" />
+      <node id="Yangpu" label="Yangpu" />
+      <node id="Pudong" label="Pudong" />
+      <node id="Jingan" label="Jingan" />
+      <node id="Songjiang" label="Songjiang" />
+      <node id="Xuhui" label="Xuhui" />
+      <node id="Jiading" label="Jiading" />
+      <node id="Changning" label="Changning" />
+      <node id="Minhang" label="Minhang" />
+      <node id="Qingpu" label="Qingpu" />
+      <node id="Baoshan" label="Baoshan" />
+      <node id="Hongkou" label="Hongkou" />
+    </nodes>
+    <edges>
+      <edge id="0" source="Putuo" target="Huangpu" />
+      <edge id="1" source="Putuo" target="Yangpu" />
+      <edge id="2" source="Putuo" target="Pudong" />
+      <edge id="3" source="Putuo" target="Jingan" />
+      <edge id="4" source="Putuo" target="Songjiang" />
+      <edge id="5" source="Putuo" target="Xuhui" />
+      <edge id="6" source="Putuo" target="Jiading" />
+      <edge id="7" source="Putuo" target="Changning" />
+      <edge id="8" source="Putuo" target="Minhang" />
+      <edge id="9" source="Putuo" target="Baoshan" />
+      <edge id="10" source="Putuo" target="Hongkou" />
+      <edge id="11" source="Huangpu" target="Yangpu" />
+      <edge id="12" source="Huangpu" target="Pudong" />
+      <edge id="13" source="Huangpu" target="Jingan" />
+      <edge id="14" source="Huangpu" target="Changning" />
+      <edge id="15" source="Huangpu" target="Jiading" />
+      <edge id="16" source="Huangpu" target="Xuhui" />
+      <edge id="17" source="Huangpu" target="Minhang" />
+      <edge id="18" source="Huangpu" target="Baoshan" />
+      <edge id="19" source="Huangpu" target="Hongkou" />
+      <edge id="20" source="Fengxian" target="Minhang" />
+      <edge id="21" source="Fengxian" target="Hongkou" />
+      <edge id="22" source="Yangpu" target="Pudong" />
+      <edge id="23" source="Yangpu" target="Jingan" />
+      <edge id="24" source="Yangpu" target="Changning" />
+      <edge id="25" source="Yangpu" target="Jiading" />
+      <edge id="26" source="Yangpu" target="Xuhui" />
+      <edge id="27" source="Yangpu" target="Minhang" />
+      <edge id="28" source="Yangpu" target="Baoshan" />
+      <edge id="29" source="Yangpu" target="Hongkou" />
+      <edge id="30" source="Pudong" target="Jingan" />
+      <edge id="31" source="Pudong" target="Songjiang" />
+      <edge id="32" source="Pudong" target="Xuhui" />
+      <edge id="33" source="Pudong" target="Jiading" />
+      <edge id="34" source="Pudong" target="Changning" />
+      <edge id="35" source="Pudong" target="Minhang" />
+      <edge id="36" source="Pudong" target="Baoshan" />
+      <edge id="37" source="Pudong" target="Hongkou" />
+      <edge id="38" source="Jingan" target="Songjiang" />
+      <edge id="39" source="Jingan" target="Xuhui" />
+      <edge id="40" source="Jingan" target="Jiading" />
+      <edge id="41" source="Jingan" target="Changning" />
+      <edge id="42" source="Jingan" target="Minhang" />
+      <edge id="43" source="Jingan" target="Qingpu" />
+      <edge id="44" source="Jingan" target="Baoshan" />
+      <edge id="45" source="Jingan" target="Hongkou" />
+      <edge id="46" source="Songjiang" target="Xuhui" />
+      <edge id="47" source="Songjiang" target="Jiading" />
+      <edge id="48" source="Songjiang" target="Changning" />
+      <edge id="49" source="Songjiang" target="Minhang" />
+      <edge id="50" source="Songjiang" target="Qingpu" />
+      <edge id="51" source="Xuhui" target="Changning" />
+      <edge id="52" source="Xuhui" target="Jiading" />
+      <edge id="53" source="Xuhui" target="Minhang" />
+      <edge id="54" source="Xuhui" target="Qingpu" />
+      <edge id="55" source="Xuhui" target="Baoshan" />
+      <edge id="56" source="Xuhui" target="Hongkou" />
+      <edge id="57" source="Jiading" target="Changning" />
+      <edge id="58" source="Jiading" target="Minhang" />
+      <edge id="59" source="Jiading" target="Qingpu" />
+      <edge id="60" source="Jiading" target="Baoshan" />
+      <edge id="61" source="Jiading" target="Hongkou" />
+      <edge id="62" source="Changning" target="Minhang" />
+      <edge id="63" source="Changning" target="Qingpu" />
+      <edge id="64" source="Changning" target="Baoshan" />
+      <edge id="65" source="Changning" target="Hongkou" />
+      <edge id="66" source="Minhang" target="Qingpu" />
+      <edge id="67" source="Minhang" target="Baoshan" />
+      <edge id="68" source="Minhang" target="Hongkou" />
+      <edge id="69" source="Qingpu" target="Baoshan" />
+      <edge id="70" source="Baoshan" target="Hongkou" />
+    </edges>
+  </graph>
+</gexf>

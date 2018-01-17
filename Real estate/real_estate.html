@@ -1,0 +1,485 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Real estate in Shanghai</title>
+    <script src="js/Chart.bundle.js"></script>
+    <script src="js/utils.js"></script>
+    <style>
+    canvas{
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+    #main_title{
+        font-size: 40px;
+        text-align: center;
+        font-family: 'Helvetica neue';
+        padding-top: 10px;
+        margin-bottom: -10px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="main_title"><b>Real estate in Shanghai</b></div>
+    <div style="width:100%;">
+        <canvas id="canvas"></canvas>
+    </div>
+    <br>
+    <br>
+    <script>
+        var config = {
+            type: 'bar',
+            data: {
+                labels: ["< 30", "[30;60]", "[60;90]", "[90;120]", "[120;150]", "[150;180]", "[180;210]", "[210;240]", "[240;270]", "[270;300]", "> 300"],
+                datasets: [{
+                    label: "Shanghai",
+                    backgroundColor: window.chartColors.red,
+                    borderColor: window.chartColors.red,
+                    data: [
+                           1793307,
+                           2527554,
+                           3625623,
+                           6109596,
+                           8952958,
+                           12729310,
+                           13854440,
+                           15913237,
+                           17074214,
+                           19434914,
+                           18344094
+                    ],
+                    fill: false,
+                }, {
+                 label: "Baoshan",
+                 backgroundColor: window.chartColors.blue,
+                 borderColor: window.chartColors.blue,
+                 data: [
+                        1051145,
+                        2112430,
+                        3497588,
+                        4942767,
+                        6367922,
+                        6942581,
+                        7658636,
+                        8571802,
+                        14276923,
+                        12998286,
+                        12937500
+                        ],
+                 fill: false,
+                 hidden: true
+                 },
+                           {
+                           label: "Changning",
+                           backgroundColor: window.chartColors.yellow,
+                           borderColor: window.chartColors.yellow,
+                           data: [
+                                  2375181,
+                                  3215346,
+                                  5051105,
+                                  8196661,
+                                  10759781,
+                                  13667916,
+                                  15913245,
+                                  19454525,
+                                  21484190,
+                                  25296521,
+                                  27402609
+                                  ],
+                           fill: false,
+                           hidden: true
+                           },
+                           {
+                           label: "Chongming",
+                           backgroundColor: window.chartColors.green,
+                           borderColor: window.chartColors.green,
+                           data: [
+                                  659194,
+                                  883291,
+                                  1030851,
+                                  2040937,
+                                  3323498,
+                                  3714369,
+                                  3738731,
+                                  3799389,
+                                  4936977,
+                                  5914198,
+                                  7789403
+                                  ],
+                           fill: false,
+                           hidden: true
+                           },
+                           {
+                           label: "Fengxian",
+                           backgroundColor: window.chartColors.purple,
+                           borderColor: window.chartColors.purple,
+                           data: [
+                                  872952,
+                                  988093,
+                                  1796450,
+                                  2410092,
+                                  3211072,
+                                  5148149,
+                                  4808230,
+                                  5650719,
+                                  6196067,
+                                  6495000,
+                                  8221791
+                                  ],
+                           fill: false,
+                           hidden: true
+                           },
+                           {
+                           label: "Hongkou",
+                           backgroundColor: window.chartColors.orange,
+                           borderColor: window.chartColors.orange,
+                           data: [
+                                  1738662,
+                                  2947079,
+                                  5101498,
+                                  7489427,
+                                  9949018,
+                                  12775754,
+                                  14202741,
+                                  17034038,
+                                  18800000,
+                                  25891165,
+                                  27322400
+                                  ],
+                           fill: false,
+                           hidden: true
+                           },
+                           {
+                           label: "Huangpu",
+                           backgroundColor: "#FF0800",
+                           borderColor: "#FF0800",
+                           data: [
+                                  2005472,
+                                  3474766,
+                                  6936343,
+                                  9400191,
+                                  11709167,
+                                  14778261,
+                                  18766880,
+                                  21500961,
+                                  26333296,
+                                  27344863,
+                                  29503140
+                                  ],
+                           fill: false,
+                           hidden: true
+                           },
+                           {
+                           label: "Jiading",
+                           backgroundColor: window.chartColors.grey,
+                           borderColor: window.chartColors.grey,
+                           data: [
+                                  723105,
+                                  1527107,
+                                  2989470,
+                                  4058239,
+                                  4951514,
+                                  6237913,
+                                  8016813,
+                                  8258302,
+                                  9409068,
+                                  10781500,
+                                  10659000
+                                  ],
+                           fill: false,
+                           hidden: true
+                           },
+                           {
+                           label: "Jingan",
+                           backgroundColor: "#15F4EE",
+                           borderColor: "#15F4EE",
+                           data: [
+                                  3312215,
+                                  4107906,
+                                  7004785,
+                                  10076831,
+                                  12405596,
+                                  17045764,
+                                  21249063,
+                                  27579265,
+                                  25305821,
+                                  31445070,
+                                  32354167
+                                  ],
+                           fill: false,
+                           hidden: true
+                           },
+                           {
+                           label: "Jinshan",
+                           backgroundColor: "#00FF00",
+                           borderColor: "#00FF00",
+                           data: [
+                                  671163,
+                                  774683,
+                                  1310158,
+                                  2049252,
+                                  2761688,
+                                  3301467,
+                                  3871127,
+                                  4201132,
+                                  4945833,
+                                  3967500,
+                                  4496000
+                                  ],
+                           fill: false,
+                           hidden: true
+                           },
+                           {
+                           label: "Luwan",
+                           backgroundColor: "#1B1B1B",
+                           borderColor: "#1B1B1B",
+                           data: [
+                                  3044817,
+                                  3812065,
+                                  7330648,
+                                  10096323,
+                                  13991232,
+                                  17575961,
+                                  22792515,
+                                  23497347,
+                                  26426617,
+                                  30356966,
+                                  31120000
+                                  ],
+                           fill: false,
+                           hidden: true
+                           },
+                           {
+                           label: "Minhang",
+                           backgroundColor: "#CD607E",
+                           borderColor: "#CD607E",
+                           data: [
+                                  794625,
+                                  2363249,
+                                  3693891,
+                                  5398026,
+                                  7524864,
+                                  10160720,
+                                  10409234,
+                                  12614410,
+                                  14634833,
+                                  16717443,
+                                  19606132
+                                  ],
+                           fill: false,
+                           hidden: true
+                           },
+                           {
+                           label: "Pudong",
+                           backgroundColor: "#7F3E98",
+                           borderColor: "#7F3E98",
+                           data: [
+                                  1984923,
+                                  2789258,
+                                  3775169,
+                                  6192489,
+                                  9362343,
+                                  13156520,
+                                  14445157,
+                                  17189609,
+                                  19243509,
+                                  22761876,
+                                  22153188
+                                  ],
+                           fill: false,
+                           hidden: true
+                           },
+                           {
+                           label: "Putuo",
+                           backgroundColor: "#FFD59A",
+                           borderColor: "#FFD59A",
+                           data: [
+                                  1648454,
+                                  2684964,
+                                  4692624,
+                                  6988262,
+                                  9415693,
+                                  12360435,
+                                  15099375,
+                                  16243636,
+                                  18971579,
+                                  22814615,
+                                  23898571
+                                  ],
+                           fill: false,
+                           hidden: true
+                           },
+                           {
+                           label: "Qingpu",
+                           backgroundColor: "#062A78",
+                           borderColor: "#062A78",
+                           data: [
+                                  691083,
+                                  1222451,
+                                  2445033,
+                                  3293066,
+                                  4561486,
+                                  6366800,
+                                  7324930,
+                                  8450884,
+                                  10562192,
+                                  12285947,
+                                  14636314
+                                  ],
+                           fill: false,
+                           hidden: true
+                           },
+                           {
+                           label: "Shanghaizhoubian",
+                           backgroundColor: "#954535",
+                           borderColor: "#954535",
+                           data: [
+                                  805667,
+                                  731405,
+                                  905953,
+                                  1092623,
+                                  1468160,
+                                  2233911,
+                                  2401569,
+                                  2485248,
+                                  2649068,
+                                  2916095,
+                                  3052019
+                                  ],
+                           fill: false,
+                           hidden: true
+                           },
+                           {
+                           label: "Songjiang",
+                           backgroundColor: "#FFF600",
+                           borderColor: "#FFF600",
+                           data: [
+                                  738849,
+                                  1366133,
+                                  2717730,
+                                  3780067,
+                                  4924204,
+                                  6666598,
+                                  7899565,
+                                  9244242,
+                                  10239448,
+                                  11134717,
+                                  13179533
+                                  ],
+                           fill: false,
+                           hidden: true
+                           },
+                           {
+                           label: "Xuhui",
+                           backgroundColor: "#FFFFCC",
+                           borderColor: "#FFFFCC",
+                           data: [
+                                  3065344,
+                                  3445777,
+                                  5212200,
+                                  8802611,
+                                  11530737,
+                                  14703009,
+                                  18460711,
+                                  21352028,
+                                  25311786,
+                                  26366301,
+                                  26468514
+                                  ],
+                           fill: false,
+                           hidden: true
+                           },
+                           {
+                           label: "Yangpu",
+                           backgroundColor: "#006400",
+                           borderColor: "#006400",
+                           data: [
+                                  1761005,
+                                  2788289,
+                                  5057241,
+                                  7452754,
+                                  10096564,
+                                  13335075,
+                                  15622522,
+                                  17768804,
+                                  19130654,
+                                  20939286,
+                                  25178571
+                                  ],
+                           fill: false,
+                           hidden: true
+                           },
+                           {
+                           label: "Zhabei",
+                           backgroundColor: "#FF1493",
+                           borderColor: "#FF1493",
+                           data: [
+                                  1747857,
+                                  2858605,
+                                  4926548,
+                                  6985050,
+                                  9199055,
+                                  13223054,
+                                  16019444,
+                                  21872958,
+                                  18583333,
+                                  31700000,
+                                  30000000
+                                  ],
+                           fill: false,
+                           hidden: true
+                           }
+                           ]
+            },
+            options: {
+                responsive: true,
+                title:{
+                    display: true,
+                    padding: 30,
+                    fontSize: 20,
+                    fontStyle: 'normal',
+                    text:'Evolution of the price (in RMB) of real estate in Shanghai according to its surface (in m2) for each district'
+                },
+                legend:{
+                    position : 'right'
+                },
+                hover: {
+                    mode: 'nearest',
+                    intersect: true
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            fontSize: 16,
+                            padding: 8,
+                            labelString: 'Surface (in m2)'
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                    
+                        scaleLabel: {
+                            display: true,
+                            fontSize: 16,
+                            padding: 8,
+                            labelString: 'Price (in RMB)'
+                        }
+                    }]
+                }
+            }
+        };
+
+        window.onload = function() {
+            var ctx = document.getElementById("canvas").getContext("2d");
+            window.myLine = new Chart(ctx, config);
+        };
+
+
+    </script>
+</body>
+
+</html>
